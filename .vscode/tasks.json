@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "socat",
+            "type": "shell",
+            "command": "socat",
+            "args": [
+                "-d",
+                "-d",
+                "pty,link=/dev/ttys048,raw,echo=0",
+                "pty,raw,echo=0"
+            ],
+            "isBackground": true,
+            "problemMatcher": []
+        }
+    ]
+}

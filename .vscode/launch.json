@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Simulator",
+            "type": "go",
+            "request": "launch",
+            "mode": "auto",
+            "program": "${workspaceFolder}/cmd/simulator",
+            "preLaunchTask": "socat",
+            "args": [
+                "-port", "COM1",  // 確認 /dev/pts 路徑與socat一致
+                "-type", "mettler",
+                "-interval", "1000"
+            ]
+        },
+        {
+            "name": "Run Tests",
+            "type": "go",
+            "request": "launch",
+            "mode": "test",
+            "program": "${workspaceFolder}/...",
+            "args": ["-v"]
+        }
+    ]
+}
