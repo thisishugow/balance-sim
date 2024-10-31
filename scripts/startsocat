@@ -1,8 +1,2 @@
 #!/bin/bash
-output=$(socat -d -d pty,raw,echo=0 pty,raw,echo=0 2>&1)
-tty1=$(echo "$output" | grep -oP 'PTY is \K/dev/pts/[0-9]+' | sed -n '1p')
-tty2=$(echo "$output" | grep -oP 'PTY is \K/dev/pts/[0-9]+' | sed -n '2p')
-
-echo "tty1: $tty1"
-echo "tty2: $tty2"
-go run cmd/simulator/main.go --port tty1 --type sartorius --interval 1000
+socat -d -d pty,raw,echo=0 pty,raw,echo=0

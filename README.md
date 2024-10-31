@@ -1,6 +1,41 @@
 # Balance Simulator
 
-This is a simple simulator for electronic balances. It can be used to generate random weights at a specified interval.
+The Balance Simulator is a tool designed to simulate data from different types of precision balances, such as Mettler and Sartorius balances, via an RS-232 COM port. This simulator can be used for development and testing purposes where a physical balance is unavailable.
+
+## Features
+
+- Simulates serial data output from precision balances
+- Supports multiple balance types: Mettler and Sartorius
+- Configurable data transmission interval
+
+## Prerequisites
+
+To use the Balance Simulator, ensure you have the following:
+
+## Installation
+
+- Go installed (version 1.18+)
+- Required serial port setup (e.g., `COM1`)
+
+
+Clone the repository and navigate to the project directory:
+
+```bash
+git clone https://github.com/thisishugow/balance-sim.git
+cd balance-sim
+go get
+```
+
+## Usage
+
+The Balance Simulator supports various configurations via command-line flags. The available flags include the COM port name, balance type, and data transmission interval.
+- `-port`: Specifies the serial port name (default: COM1)
+- `-type`: Specifies the type of balance to simulate. Supported values are mettler and sartorius (default: mettler)
+- `-interval`: Sets the interval for sending data in milliseconds (default: 1000)
+```bash
+go run ./cmd/simulator/main.go -port COM1 -type mettler -interval 1000
+```
+
 
 ## Structure
 
@@ -22,9 +57,3 @@ The recommended structure for this project is as follows:
 * `go.mod` - the Go module file
 * `go.sum` - the Go module checksums file
 
-## Usage
-
-To use the simulator, run the following command:
-```bash
-go run cmd/simulator/main.go
-```

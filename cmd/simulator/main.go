@@ -8,6 +8,16 @@ import (
 	"balance-sim/internal/simulator"
 )
 
+// main starts a balance simulator with the given configuration.
+//
+// The configuration is specified through the following command line flags:
+//
+// -port: the name of the serial port to use (default: COM1)
+// -type: the type of balance to simulate (default: mettler, supported values: mettler, sartorius)
+// -interval: the interval at which data is sent in milliseconds (default: 1000)
+//
+// The simulator will continuously send data to the given serial port at the given interval.
+// The program will exit when the simulator is stopped.
 func main() {
 	portName := flag.String("port", "COM1", "COM port name")
 	balanceType := flag.String("type", "mettler", "Balance type (mettler/sartorius)")
