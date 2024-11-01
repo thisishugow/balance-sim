@@ -10,7 +10,9 @@ The Balance Simulator is a tool designed to simulate data from different types o
 
 ## Prerequisites
 
-To use the Balance Simulator, ensure you have the following:
+To use the Balance Simulator, ensure you have the following tools to simulate a pair of COM Ports:
+- Windows: [VSPE (recommend)](https://eterlogic.com/products.vspe.html), [com0com](https://com0com.sourceforge.net/)
+- macOS: socat
 
 ## Installation
 
